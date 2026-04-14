@@ -15,7 +15,7 @@ export default function Hero() {
       setText(TEXT.slice(0, i));
       i++;
       if (i > TEXT.length) clearInterval(interval);
-    }, 40);
+    }, 24);
 
     return () => clearInterval(interval);
   }, []);
@@ -31,7 +31,7 @@ export default function Hero() {
         <span className="text-blue-500">Trouble</span>
       </motion.h1>
 
-      <p className="text-gray-500 max-w-2xl mx-auto text-lg">
+      <p className="text-gray-400 max-w-2xl mx-auto text-lg">
         {text}
         <span className="animate-pulse">|</span>
       </p>
