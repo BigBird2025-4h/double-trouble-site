@@ -25,8 +25,8 @@ export default function Sections() {
               className={`p-8 rounded-xl border border-[#30363d] cursor-pointer transition-all duration-300
               ${
                 sec.color === "red"
-                  ? "hover:shadow-[0_0_30px_rgba(255,0,0,0.3)]"
-                  : "hover:shadow-[0_0_30px_rgba(0,0,255,0.3)]"
+                  ? "hover:shadow-[0_0_60px_rgba(255,0,0,0.6)]"
+                  : "hover:shadow-[0_0_60px_rgba(0,0,255,0.6)]"
               }`}
             >
               <h2
