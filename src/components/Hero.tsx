@@ -15,7 +15,7 @@ export default function Hero() {
       setText(TEXT.slice(0, i));
       i++;
       if (i > TEXT.length) clearInterval(interval);
-    }, 25);
+    }, 40);
 
     return () => clearInterval(interval);
   }, []);
