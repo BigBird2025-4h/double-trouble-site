@@ -26,7 +26,7 @@ export default function Sections() {
               ${
                 sec.color === "red"
                   ? "hover:shadow-[0_0_600px_rgba(255,0,0,0.6)]"
-                  : "hover:shadow-[0_0_600px_rgba(0,0,255,0.6)]"
+                  : "hover:shadow-[0_0_60px_rgba(0,0,255,0.6)]"
               }`}
             >
               <h2
