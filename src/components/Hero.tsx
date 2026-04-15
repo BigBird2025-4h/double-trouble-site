@@ -37,7 +37,7 @@ export default function Hero() {
         <span className="text-blue-500">Trouble</span>
       </motion.h1>
 
-<p className={`${jetbrains.className} text-gray-400 max-w-2xl mx-auto text-lg`}>
+<p className={`${jetbrains.className} text-gray-200 max-w-2xl mx-auto text-lg`}>
           {text}
         <span className="cursor">|</span>
       </p>
