@@ -9,47 +9,54 @@ const jetbrains = JetBrains_Mono({ subsets: ["latin"] });
 const CHARS =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
 
+const BASE =
+  "Double Trouble is a FIRST Tech Challenge team dedicated to ";
+
 const PHRASES = [
   {
-    text: "Double Trouble is a FIRST Tech Challenge team dedicated to designing, building and programming high-performance robots.",
+    text: "designing, building and programming high-performance robots.",
     highlights: { robots: "text-green-400" },
   },
   {
-    text: "Double Trouble is a FIRST Tech Challenge team dedicated to bringing STEAM to our community.",
+    text: "bringing STEAM to our community.",
     highlights: { STEAM: "text-orange-400" },
   },
   {
-    text: "Double Trouble is a FIRST Tech Challenge team dedicated to Gracious Professionalism on and off the field.",
+    text: "Gracious Professionalism on and off the field.",
     highlights: { "Gracious Professionalism": "text-purple-400" },
   },
   {
-    text: "Double Trouble is a FIRST Tech Challenge team dedicated to connecting ideas with practical solutions.",
-    highlights: { solutions: "text-blue-400" },
+    text: "connecting ideas with practical solutions.",
+    highlights: {
+      practical: "text-red-400",
+      solutions: "text-blue-400",
+    },
   },
   {
-    text: "Double Trouble is a FIRST Tech Challenge team dedicated to eating ice cream and pizza.",
-    highlights: { pizza: "text-red-400" },
+    text: "eating ice cream and pizza.",
+    highlights: { "ice cream": "text-yellow-400", pizza: "text-red-400" },
   },
 ];
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
-  const [display, setDisplay] = useState("");
   const [progress, setProgress] = useState(0);
+  const [display, setDisplay] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [isWaiting, setIsWaiting] = useState(false);
 
-  const current = PHRASES[index];
+  const current = PHRASES[index].text;
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
 
+    // ⏸ WAIT STATE (hold text / pause between actions)
     if (isWaiting) {
       timeout = setTimeout(() => {
         setIsWaiting(false);
 
         if (!isDeleting) {
-          setIsDeleting(true); // start deleting
+          setIsDeleting(true);
         } else {
           setIsDeleting(false);
           setIndex((prev) => (prev + 1) % PHRASES.length);
@@ -60,55 +67,59 @@ export default function Hero() {
       return () => clearTimeout(timeout);
     }
 
-    // ✍️ TYPING WITH GLITCH
+    // ✍️ TYPING (glitch ONLY current character)
     if (!isDeleting) {
       timeout = setTimeout(() => {
-        let result = "";
+        const correct = current.slice(0, progress);
 
-        for (let i = 0; i < current.text.length; i++) {
-          if (i < progress) {
-            result += current.text[i];
-          } else {
-            result += CHARS[Math.floor(Math.random() * CHARS.length)];
-          }
-        }
+        const nextChar =
+          progress < current.length
+            ? CHARS[Math.floor(Math.random() * CHARS.length)]
+            : "";
 
-        setDisplay(result);
+        const shouldGlitch = progress < current.length;
 
-        if (progress >= current.text.length) {
+        setDisplay(BASE + correct + (shouldGlitch ? nextChar : ""));
+
+        if (progress >= current.length) {
+          setDisplay(BASE + current);
           setIsWaiting(true);
         } else {
           setProgress((p) => p + 1);
         }
-      }, 20);
+      }, 30);
     }
 
-    // ⌫ DELETING
+    // ⌫ DELETING (only back to BASE)
     else {
       timeout = setTimeout(() => {
-        const next = current.text.slice(0, progress - 1);
-        setDisplay(next);
+        const next = current.slice(0, progress - 1);
+
+        setDisplay(BASE + next);
         setProgress((p) => p - 1);
 
         if (progress <= 0) {
           setIsWaiting(true);
         }
-      }, 15);
+      }, 20);
     }
 
     return () => clearTimeout(timeout);
   }, [progress, isDeleting, isWaiting, index]);
 
+  // 🎨 highlight words
   function renderText(text: string) {
     let output = text;
 
-    Object.entries(current.highlights).forEach(([word, color]) => {
-      const regex = new RegExp(`(${word})`, "gi");
-      output = output.replace(
-        regex,
-        `<span class="${color}">$1</span>`
-      );
-    });
+    Object.entries(PHRASES[index].highlights).forEach(
+      ([word, color]) => {
+        const regex = new RegExp(`(${word})`, "gi");
+        output = output.replace(
+          regex,
+          `<span class="${color}">$1</span>`
+        );
+      }
+    );
 
     return output;
   }
@@ -126,10 +137,14 @@ export default function Hero() {
 
       <p
         className={`${jetbrains.className} text-gray-400 max-w-2xl mx-auto text-lg`}
-        dangerouslySetInnerHTML={{ __html: renderText(display) }}
-      />
-
-      <span className="cursor">|</span>
+      >
+        <span
+          dangerouslySetInnerHTML={{
+            __html: renderText(display),
+          }}
+        />
+        <span className="animate-pulse ml-1">|</span>
+      </p>
     </div>
   );
 }
