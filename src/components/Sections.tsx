@@ -25,8 +25,8 @@ export default function Sections() {
               className={`p-8 rounded-xl border border-[#30363d] cursor-pointer transition-all duration-300
               ${
                 sec.color === "red"
-                  ? "hover:shadow-[0_0_30px_rgba(255,0,0,0.6)]"
-                  : "hover:shadow-[0_0_30px_rgba(0,0,255,0.6)]"
+                  ? "hover:shadow-[0_0_60px_rgba(255,0,0,0.6)]"
+                  : "hover:shadow-[0_0_60px_rgba(0,0,255,0.6)]"
               }`}
             >
               <h2
@@ -37,6 +37,14 @@ export default function Sections() {
                 {sec.title}
               </h2>
 
+              <div
+  className={`p-8 rounded-xl border border-[#30363d] cursor-pointer transition-all duration-300
+  ${
+    sec.color === "red"
+      ? "hover:shadow-[0_0_40px_rgba(239,68,68,0.5)] hover:border-red-500/50"
+      : "hover:shadow-[0_0_40px_rgba(59,130,246,0.5)] hover:border-blue-500/50"
+  }`}
+></div>
               <p className="text-gray-400 mt-2">
                 Explore our {sec.title.toLowerCase()}
               </p>
