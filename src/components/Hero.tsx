@@ -28,8 +28,8 @@ const PHRASES = [
   {
     text: "connecting ideas with practical solutions.",
     highlights: {
-      practical: "text-red-400",
-      solutions: "text-blue-400",
+      ideas: "text-red-400",
+      practical: "text-blue-400",
     },
   },
   {
