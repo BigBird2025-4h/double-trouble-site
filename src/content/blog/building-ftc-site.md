@@ -26,23 +26,6 @@ This stack was chosen to make development fast, maintainable, and visually polis
 
 ---
 
-## Project Structure
-
-The project uses the **Next.js App Router**, which organizes the entire site through the `src/app` directory.
-
-Each route is created using folders and `page.tsx` files, for example:
-
-- `/` → Home page (`src/app/page.tsx`)
-- `/blog` → Blog index (`src/app/blog/page.tsx`)
-- `/blog/[slug]` → Dynamic blog posts
-- `/portfolio` → Project showcase page
-
-Reusable UI components such as the navbar, hero section, animated background, and content sections are stored in `src/components` to keep the project modular and easy to maintain.
-
-This structure makes it easy to scale the website as the team grows and new features are added.
-
----
-
 ## Blog System
 
 The blog is powered by a **file-based Markdown system**, meaning no database is required.
