@@ -68,7 +68,7 @@ export default function Hero() {
           setIndex((i) => (i + 1) % PHRASES.length);
           setProgress(0);
         }
-      }, isDeleting ? 1000 : 4000);
+      }, isDeleting ? 500 : 3000);
 
       return () => clearTimeout(timeout);
     }
