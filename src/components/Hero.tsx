@@ -41,16 +41,22 @@ const PHRASES = [
 export default function Hero() {
   const [index, setIndex] = useState(0);
   const [progress, setProgress] = useState(0);
-  const [display, setDisplay] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [isWaiting, setIsWaiting] = useState(false);
+  const [glitchChar, setGlitchChar] = useState("");
 
   const current = PHRASES[index].text;
+
+  // 🎨 build visible text
+  const visibleText =
+    BASE +
+    current.slice(0, progress) +
+    (isDeleting ? "" : glitchChar);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
 
-    // ⏸ WAIT STATE (hold text / pause between actions)
+    // ⏸ pause state
     if (isWaiting) {
       timeout = setTimeout(() => {
         setIsWaiting(false);
@@ -59,7 +65,7 @@ export default function Hero() {
           setIsDeleting(true);
         } else {
           setIsDeleting(false);
-          setIndex((prev) => (prev + 1) % PHRASES.length);
+          setIndex((i) => (i + 1) % PHRASES.length);
           setProgress(0);
         }
       }, isDeleting ? 1000 : 4000);
@@ -67,38 +73,33 @@ export default function Hero() {
       return () => clearTimeout(timeout);
     }
 
-    // ✍️ TYPING (glitch ONLY current character)
+    // ✍️ typing (with single-letter glitch)
     if (!isDeleting) {
       timeout = setTimeout(() => {
-        const correct = current.slice(0, progress);
+        const next = progress + 1;
 
-        const nextChar =
-          progress < current.length
-            ? CHARS[Math.floor(Math.random() * CHARS.length)]
-            : "";
+        // only glitch CURRENT letter
+        setGlitchChar(
+          CHARS[Math.floor(Math.random() * CHARS.length)]
+        );
 
-        const shouldGlitch = progress < current.length;
+        setProgress(next);
 
-        setDisplay(BASE + correct + (shouldGlitch ? nextChar : ""));
-
-        if (progress >= current.length) {
-          setDisplay(BASE + current);
+        if (next >= current.length) {
+          setGlitchChar("");
           setIsWaiting(true);
-        } else {
-          setProgress((p) => p + 1);
         }
       }, 30);
     }
 
-    // ⌫ DELETING (only back to BASE)
+    // ⌫ deleting
     else {
       timeout = setTimeout(() => {
-        const next = current.slice(0, progress - 1);
+        const next = progress - 1;
 
-        setDisplay(BASE + next);
-        setProgress((p) => p - 1);
+        setProgress(next);
 
-        if (progress <= 0) {
+        if (next <= 0) {
           setIsWaiting(true);
         }
       }, 20);
@@ -107,7 +108,7 @@ export default function Hero() {
     return () => clearTimeout(timeout);
   }, [progress, isDeleting, isWaiting, index]);
 
-  // 🎨 highlight words
+  // 🎨 highlight system
   function renderText(text: string) {
     let output = text;
 
@@ -140,10 +141,10 @@ export default function Hero() {
       >
         <span
           dangerouslySetInnerHTML={{
-            __html: renderText(display),
+            __html: renderText(visibleText),
           }}
         />
-        <span className="animate-pulse ml-1">|</span>
+        <span className="cursor">|</span>
       </p>
     </div>
   );
