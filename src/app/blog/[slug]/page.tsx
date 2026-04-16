@@ -1,34 +1,33 @@
-import { getPosts } from "../utils";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import fs from "fs";
+import path from "path";
+import { notFound } from "next/navigation";
 
-export default async function BlogPost({ params }: any) {
-  const { slug } = await params;
+export default function BlogPost({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const filePath = path.join(
+    process.cwd(),
+    "src/content/blog",
+    `${params.slug}.md`
+  );
 
-  const posts = getPosts();
-  const post = posts.find((p) => p.slug === slug);
-
-  if (!post) {
-    return (
-      <div className="text-white">
-        <h1 className="text-red-500 text-2xl">Post not found</h1>
-      </div>
-    );
+  if (!fs.existsSync(filePath)) {
+    return notFound();
   }
+
+  const content = fs.readFileSync(filePath, "utf-8");
 
   return (
     <div className="max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold text-blue-500 mb-2">
-        {post.title}
+      <h1 className="text-3xl font-bold mb-6 capitalize">
+        {params.slug.replace(/-/g, " ")}
       </h1>
 
-      <p className="text-gray-500 mb-8">{post.date}</p>
-
-      <article className="prose prose-invert prose-blue max-w-none">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {post.content}
-        </ReactMarkdown>
-      </article>
+      <pre className="whitespace-pre-wrap text-gray-300">
+        {content}
+      </pre>
     </div>
   );
 }
