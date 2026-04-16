@@ -15,122 +15,114 @@ const BASE =
 const PHRASES = [
   {
     text: "designing, building and programming high-performance robots.",
-    highlights: ["robots"],
+    highlights: { robots: "text-green-400" },
   },
   {
     text: "bringing STEAM to our community.",
-    highlights: ["STEAM"],
+    highlights: { STEAM: "text-orange-400" },
   },
   {
     text: "Gracious Professionalism on and off the field.",
-    highlights: ["Gracious Professionalism"],
+    highlights: { "Gracious Professionalism": "text-purple-400" },
   },
   {
     text: "connecting ideas with practical solutions.",
-    highlights: ["practical", "solutions"],
+    highlights: {
+      practical: "text-red-400",
+      solutions: "text-blue-400",
+    },
   },
   {
     text: "eating ice cream and pizza.",
-    highlights: ["ice cream", "pizza"],
+    highlights: { "ice cream": "text-yellow-400", pizza: "text-red-400" },
   },
 ];
-
-const COLOR_MAP: Record<string, string> = {
-  robots: "text-green-400",
-  STEAM: "text-orange-400",
-  "Gracious Professionalism": "text-purple-400",
-  practical: "text-red-400",
-  solutions: "text-blue-400",
-  "ice cream": "text-yellow-400",
-  pizza: "text-red-400",
-};
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
   const [progress, setProgress] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [waiting, setWaiting] = useState(false);
-  const [glitchIndex, setGlitchIndex] = useState<number | null>(null);
+  const [isWaiting, setIsWaiting] = useState(false);
   const [glitchChar, setGlitchChar] = useState("");
 
   const current = PHRASES[index].text;
-  const full = BASE + current;
+
+  // 🎨 build visible text
+  const visibleText =
+    BASE +
+    current.slice(0, progress) +
+    (isDeleting ? "" : glitchChar);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
 
-    if (waiting) {
+    // ⏸ pause state
+    if (isWaiting) {
       timeout = setTimeout(() => {
-        setWaiting(false);
+        setIsWaiting(false);
 
-        if (isDeleting) {
+        if (!isDeleting) {
+          setIsDeleting(true);
+        } else {
           setIsDeleting(false);
           setIndex((i) => (i + 1) % PHRASES.length);
           setProgress(0);
-        } else {
-          setIsDeleting(true);
         }
-      }, isDeleting ? 600 : 3000);
+      }, isDeleting ? 1000 : 4000);
 
       return () => clearTimeout(timeout);
     }
 
-    // TYPE
+    // ✍️ typing (with single-letter glitch)
     if (!isDeleting) {
       timeout = setTimeout(() => {
         const next = progress + 1;
 
-        // glitch ONLY current letter
-        setGlitchIndex(progress);
+        // only glitch CURRENT letter
         setGlitchChar(
           CHARS[Math.floor(Math.random() * CHARS.length)]
         );
 
         setProgress(next);
 
-        if (next >= full.length) {
-          setGlitchIndex(null);
+        if (next >= current.length) {
           setGlitchChar("");
-          setWaiting(true);
+          setIsWaiting(true);
         }
-      }, 25);
+      }, 30);
     }
 
-    // DELETE
+    // ⌫ deleting
     else {
       timeout = setTimeout(() => {
         const next = progress - 1;
+
         setProgress(next);
 
-        if (next <= BASE.length) {
-          setWaiting(true);
+        if (next <= 0) {
+          setIsWaiting(true);
         }
-      }, 15);
+      }, 20);
     }
 
     return () => clearTimeout(timeout);
-  }, [progress, isDeleting, waiting]);
+  }, [progress, isDeleting, isWaiting, index]);
 
-  function renderText() {
-    const text = full.slice(0, progress);
+  // 🎨 highlight system
+  function renderText(text: string) {
+    let output = text;
 
-    return text.split("").map((char, i) => {
-      let displayChar = char;
-
-      if (i === glitchIndex && glitchChar && !isDeleting) {
-        displayChar = glitchChar;
+    Object.entries(PHRASES[index].highlights).forEach(
+      ([word, color]) => {
+        const regex = new RegExp(`(${word})`, "gi");
+        output = output.replace(
+          regex,
+          `<span class="${color}">$1</span>`
+        );
       }
+    );
 
-      const isHighlighted = PHRASES[index].highlights.some((word) =>
-        text.includes(word)
-      );
-
-      return (
-        <span key={i} className="relative">
-          {displayChar}
-        </span>
-      );
-    });
+    return output;
   }
 
   return (
@@ -147,10 +139,12 @@ export default function Hero() {
       <p
         className={`${jetbrains.className} text-gray-400 max-w-2xl mx-auto text-lg`}
       >
-        {renderText()}
-
-        {/* REAL BLINKING CURSOR */}
-        <span className="ml-1 animate-blink text-white">|</span>
+        <span
+          dangerouslySetInnerHTML={{
+            __html: renderText(visibleText),
+          }}
+        />
+        <span className="cursor">|</span>
       </p>
     </div>
   );
