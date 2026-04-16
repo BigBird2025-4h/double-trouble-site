@@ -13,20 +13,21 @@ export default function BlogPost({
     `${params.slug}.md`
   );
 
+  // DEBUG SAFETY
   if (!fs.existsSync(filePath)) {
+    console.log("Missing file:", filePath);
     return notFound();
   }
 
   const file = fs.readFileSync(filePath, "utf-8");
 
-  // crude split (frontmatter removed)
   const content = file.split("---").slice(2).join("---");
 
   return (
     <div className="max-w-3xl mx-auto">
-      <article className="prose prose-invert">
+      <pre className="whitespace-pre-wrap text-gray-300">
         {content}
-      </article>
+      </pre>
     </div>
   );
 }

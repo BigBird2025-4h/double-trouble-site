@@ -1,18 +1,19 @@
 ---
-title: "How was our website built?"
+title: "How was our website built?
 date: "2026-04-14"
 ---
 ---
 ---
-Hey, I’m Noah. I’m our design and software lead, and I created this site to give our FTC team a professional online presence and a central hub for everything we do. Updates, outreach, scrimmages, resources, and competition progress can all be found here.
+Hey, I’m Noah. I’m Double Trouble's design and software lead, and I created this site to give our FTC team a professional online presence and a central hub for everything we do. Updates, outreach, scrimmages, resources, and competition progress can all be found here.
 ---
 In this post, I’ll walk through how the site was built and the tools and systems behind it.
 ---
 ---
-# How does a website work, in basic terms?
 ---
-If you've never built a website before, here is the TL;DR of how ours works. First, I wrote our website's code (in this case I used a bunch of different languages, but you technically only need an HTML file). Then, once I had our code, I uploaded it to my GitHub repo. From there, I need to host our website. I really like Vercel because it's super well integrated with GitHub and it's really easy to use. (and I couldn't get GitHub Pages to work no matter what I freaking tried). We just import
-
+If you've never built a website before, here is the TL;DR of how ours works. First, I wrote our website's code, uploaded it to GitHub, then imported it to Vercel, deployed it, and finally used Google Search Console to get our site visible when people search for it. 
+---
+---
+---
 
 
 ## Future Improvements
