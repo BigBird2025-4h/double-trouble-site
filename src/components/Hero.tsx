@@ -10,20 +10,28 @@ const CHARS =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
 
 const BASE =
-  "Double Trouble is a FIRST Tech Challenge team dedicated to ";
+  "Double Trouble is an FTC (FIRST Tech Challenge) team dedicated to ";
 
 const PHRASES = [
   {
     text: "designing, building and programming high-performance robots.",
-    highlights: { robots: "text-green-400" },
+    highlights: { robots: "text-green-400",
+      designing: "text-blue-400",
+      programming: "text-yellow-400",
+     },
   },
   {
     text: "bringing STEAM to our community.",
-    highlights: { STEAM: "text-orange-400" },
+    highlights: { STEAM: "text-orange-400",
+      community: "text-green-400"
+    },
   },
   {
     text: "Gracious Professionalism on and off the field.",
-    highlights: { "Gracious Professionalism": "text-purple-400" },
+    highlights: { 
+      "Gracious Professionalism": "text-purple-400",
+      field: "text-pink-400"  
+    },
   },
   {
     text: "connecting ideas with practical solutions.",
