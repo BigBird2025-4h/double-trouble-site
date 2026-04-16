@@ -17,17 +17,16 @@ export default function BlogPost({
     return notFound();
   }
 
-  const content = fs.readFileSync(filePath, "utf-8");
+  const file = fs.readFileSync(filePath, "utf-8");
+
+  // crude split (frontmatter removed)
+  const content = file.split("---").slice(2).join("---");
 
   return (
     <div className="max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6 capitalize">
-        {params.slug.replace(/-/g, " ")}
-      </h1>
-
-      <pre className="whitespace-pre-wrap text-gray-300">
+      <article className="prose prose-invert">
         {content}
-      </pre>
+      </article>
     </div>
   );
 }
