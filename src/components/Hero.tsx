@@ -17,21 +17,37 @@ const PHRASES = [
   "eating ice cream and pizza.",
 ];
 
+const CHARS =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+
 export default function Hero() {
   const [index, setIndex] = useState(0);
   const [text, setText] = useState("");
   const [mode, setMode] = useState<"typing" | "waiting" | "deleting">(
     "typing"
   );
+  const [glitch, setGlitch] = useState("");
 
+  const fullText = BASE + PHRASES[index];
+
+  // MAIN TYPE / DELETE ENGINE
   useEffect(() => {
-    const fullText = BASE + PHRASES[index];
     let timeout: NodeJS.Timeout;
 
     if (mode === "typing") {
       if (text.length < fullText.length) {
         timeout = setTimeout(() => {
-          setText(fullText.slice(0, text.length + 1));
+          const nextChar = fullText[text.length];
+
+          // glitch phase: random character flicker before real char
+          const randomChar =
+            CHARS[Math.floor(Math.random() * CHARS.length)];
+
+          setGlitch(randomChar);
+
+          setTimeout(() => {
+            setText(fullText.slice(0, text.length + 1));
+          }, 20);
         }, 25);
       } else {
         setMode("waiting");
@@ -68,7 +84,10 @@ export default function Hero() {
         className={`${jetbrains.className} text-gray-400 text-lg max-w-2xl mx-auto`}
       >
         {text}
-        <span className="animate-pulse">|</span>
+        <span className="text-gray-500">{glitch}</span>
+
+        {/* BLINKING CURSOR */}
+        <span className="ml-1 animate-pulse text-white">|</span>
       </p>
     </div>
   );
