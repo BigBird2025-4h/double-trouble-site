@@ -15,26 +15,26 @@ const BASE =
 const PHRASES = [
   {
     text: "designing, building and programming high-performance robots.",
-    highlights: { robots: "text-green-400" },
+    highlights: { robots: "text-green-400 text-glow-green" },
   },
   {
     text: "bringing STEAM to our community.",
-    highlights: { STEAM: "text-orange-400" },
+    highlights: { STEAM: "text-orange-400 text-glow-orange" },
   },
   {
     text: "Gracious Professionalism on and off the field.",
-    highlights: { "Gracious Professionalism": "text-purple-400" },
+    highlights: { "Gracious Professionalism": "text-purple-400 text-glow-purple" },
   },
   {
     text: "connecting ideas with practical solutions.",
     highlights: {
-      ideas: "text-red-400",
+      ideas: "text-red-400 text-glow-red",
       practical: "text-blue-400",
     },
   },
   {
     text: "eating ice cream and pizza.",
-    highlights: { "ice cream": "text-yellow-400", pizza: "text-red-400" },
+    highlights: { "ice cream": "text-yellow-400 text-glow-yellow", pizza: "text-red-400 text-glow-red" },
   },
 ];
 
@@ -79,9 +79,10 @@ export default function Hero() {
         const next = progress + 1;
 
         // only glitch CURRENT letter
-        setGlitchChar(
-          CHARS[Math.floor(Math.random() * CHARS.length)]
-        );
+        setGlitchChar(CHARS[Math.floor(Math.random() * CHARS.length)]);
+        setTimeout(() => {
+          setGlitchChar(current[progress] || "");
+        }, 10);
 
         setProgress(next);
 
@@ -136,16 +137,33 @@ export default function Hero() {
         <span className="text-blue-500">Trouble</span>
       </motion.h1>
 
-      <p
-        className={`${jetbrains.className} text-gray-400 max-w-2xl mx-auto text-lg`}
-      >
-        <span
-          dangerouslySetInnerHTML={{
-            __html: renderText(visibleText),
-          }}
-        />
-        <span className="cursor">|</span>
-      </p>
+      <motion.p
+  initial={{ opacity: 0, y: 10 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.3 }}
+  className={`${jetbrains.className} text-gray-400 max-w-2xl mx-auto text-lg`}
+>
+  <span
+    dangerouslySetInnerHTML={{
+      __html: renderText(visibleText),
+    }}
+  />
+  <span className="cursor">|</span>
+</motion.p>
+    
+    <div className="mt-10 flex justify-center">
+  <a
+    href="/blog"
+    className="relative px-8 py-3 rounded-lg font-medium text-white border border-white/20 backdrop-blur-md bg-white/5 hover:bg-white/10 transition duration-300 group overflow-hidden"
+  >
+    <span className="relative z-10">Read Build Logs</span>
+
+    {/* subtle glow line */}
+    <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition">
+      <span className="absolute inset-0 bg-gradient-to-r from-red-500 via-blue-500 to-purple-500 opacity-20 blur-md"></span>
+    </span>
+  </a>
+</div>
     </div>
   );
 }

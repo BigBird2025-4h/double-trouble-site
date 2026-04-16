@@ -6,7 +6,7 @@ import Link from "next/link";
 const sections = [
   { title: "Portfolio", color: "red", href: "/portfolio" },
   { title: "Blog / Media", color: "blue", href: "/blog" },
-  { title: "Members", color: "red", href: "/members" },
+  { title: "Sponsors", color: "red", href: "/sponsors" },
   { title: "Resources", color: "blue", href: "/resources" },
 ];
 
