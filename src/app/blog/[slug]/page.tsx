@@ -2,6 +2,8 @@ import fs from "fs";
 import path from "path";
 import { notFound } from "next/navigation";
 
+export const dynamic = "force-dynamic";
+
 export default function BlogPost({
   params,
 }: {
@@ -13,9 +15,7 @@ export default function BlogPost({
     `${params.slug}.md`
   );
 
-  // DEBUG SAFETY
   if (!fs.existsSync(filePath)) {
-    console.log("Missing file:", filePath);
     return notFound();
   }
 

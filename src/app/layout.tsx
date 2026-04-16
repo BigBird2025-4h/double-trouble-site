@@ -4,7 +4,7 @@ import Background from "../components/Background";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Double Trouble FTC Robotics Team",
+  title: "Double Trouble FTC",
   description:
     "FIRST Tech Challenge robotics team. Engineering, programming, and competition updates.",
 };
