@@ -6,68 +6,124 @@ import { motion } from "framer-motion";
 
 const jetbrains = JetBrains_Mono({ subsets: ["latin"] });
 
+const CHARS =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+
 const BASE =
   "Double Trouble is a FIRST Tech Challenge team dedicated to ";
 
 const PHRASES = [
-  "designing, building and programming high-performance robots.",
-  "bringing STEAM to our community.",
-  "Gracious Professionalism on and off the field.",
-  "connecting ideas with practical solutions.",
-  "eating ice cream and pizza.",
+  {
+    text: "designing, building and programming high-performance robots.",
+    highlights: { robots: "text-green-400" },
+  },
+  {
+    text: "bringing STEAM to our community.",
+    highlights: { STEAM: "text-orange-400" },
+  },
+  {
+    text: "Gracious Professionalism on and off the field.",
+    highlights: { "Gracious Professionalism": "text-purple-400" },
+  },
+  {
+    text: "connecting ideas with practical solutions.",
+    highlights: {
+      ideas: "text-red-400",
+      practical: "text-blue-400",
+    },
+  },
+  {
+    text: "eating ice cream and pizza.",
+    highlights: { "ice cream": "text-yellow-400", pizza: "text-red-400" },
+  },
 ];
-
-const CHARS =
-  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
-  const [text, setText] = useState("");
-  const [mode, setMode] = useState<"typing" | "waiting" | "deleting">(
-    "typing"
-  );
-  const [glitch, setGlitch] = useState("");
+  const [progress, setProgress] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [isWaiting, setIsWaiting] = useState(false);
+  const [glitchChar, setGlitchChar] = useState("");
 
-  const fullText = BASE + PHRASES[index];
+  const current = PHRASES[index].text;
 
-  // MAIN TYPE / DELETE ENGINE
+  // 🎨 build visible text
+  const visibleText =
+    BASE +
+    current.slice(0, progress) +
+    (isDeleting ? "" : glitchChar);
+
   useEffect(() => {
     let timeout: NodeJS.Timeout;
 
-    if (mode === "typing") {
-      if (text.length < fullText.length) {
-        timeout = setTimeout(() => {
-          const nextChar = fullText[text.length];
+    // ⏸ pause state
+    if (isWaiting) {
+      timeout = setTimeout(() => {
+        setIsWaiting(false);
 
-          // glitch phase: random character flicker before real char
-          const randomChar =
-            CHARS[Math.floor(Math.random() * CHARS.length)];
+        if (!isDeleting) {
+          setIsDeleting(true);
+        } else {
+          setIsDeleting(false);
+          setIndex((i) => (i + 1) % PHRASES.length);
+          setProgress(0);
+        }
+      }, isDeleting ? 500 : 3000);
 
-          setGlitch(randomChar);
-
-          setTimeout(() => {
-            setText(fullText.slice(0, text.length + 1));
-          }, 20);
-        }, 25);
-      } else {
-        setMode("waiting");
-        timeout = setTimeout(() => setMode("deleting"), 4000);
-      }
+      return () => clearTimeout(timeout);
     }
 
-    if (mode === "deleting") {
-      if (text.length > BASE.length) {
-        timeout = setTimeout(() => {
-          setText(text.slice(0, -1));
-        }, 15);
-      } else {
-        setIndex((i) => (i + 1) % PHRASES.length);
-        setMode("typing");
-      }
+    // ✍️ typing (with single-letter glitch)
+    if (!isDeleting) {
+      timeout = setTimeout(() => {
+        const next = progress + 1;
+
+        // only glitch CURRENT letter
+        setGlitchChar(
+          CHARS[Math.floor(Math.random() * CHARS.length)]
+        );
+
+        setProgress(next);
+
+        if (next >= current.length) {
+          setGlitchChar("");
+          setIsWaiting(true);
+        }
+      }, 30);
+    }
+
+    // ⌫ deleting
+    else {
+      timeout = setTimeout(() => {
+        const next = progress - 1;
+
+        setProgress(next);
+
+        if (next <= 0) {
+          setIsWaiting(true);
+        }
+      }, 20);
     }
 
     return () => clearTimeout(timeout);
-  }, [text, mode, index]);
+  }, [progress, isDeleting, isWaiting, index]);
+
+  // 🎨 highlight system
+  function renderText(text: string) {
+    let output = text;
+
+    Object.entries(PHRASES[index].highlights).forEach(
+      ([word, color]) => {
+        const regex = new RegExp(`(${word})`, "gi");
+        output = output.replace(
+          regex,
+          `<span class="${color}">$1</span>`
+        );
+      }
+    );
+
+    return output;
+  }
 
   return (
     <div className="text-center mt-24">
@@ -81,13 +137,14 @@ export default function Hero() {
       </motion.h1>
 
       <p
-        className={`${jetbrains.className} text-gray-400 text-lg max-w-2xl mx-auto`}
+        className={`${jetbrains.className} text-gray-400 max-w-2xl mx-auto text-lg`}
       >
-        {text}
-        <span className="text-gray-500">{glitch}</span>
-
-        {/* BLINKING CURSOR */}
-        <span className="ml-1 animate-pulse text-white">|</span>
+        <span
+          dangerouslySetInnerHTML={{
+            __html: renderText(visibleText),
+          }}
+        />
+        <span className="cursor">|</span>
       </p>
     </div>
   );
