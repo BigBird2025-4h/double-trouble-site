@@ -15,6 +15,11 @@ export default function BlogPost({
     `${params.slug}.md`
   );
 
+  console.log("SLUG:", params.slug);
+console.log("EXPECTED FILE:", `${params.slug}.md`);
+console.log("FULL PATH:", filePath);
+console.log("EXISTS:", fs.existsSync(filePath));
+
   if (!fs.existsSync(filePath)) {
     return notFound();
   }

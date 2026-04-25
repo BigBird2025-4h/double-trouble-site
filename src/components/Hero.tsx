@@ -55,7 +55,7 @@ export default function Hero() {
 
   const current = PHRASES[index].text;
 
-  // 🎨 build visible text
+  // build visible text
   const visibleText =
     BASE +
     current.slice(0, progress) +
@@ -81,7 +81,7 @@ export default function Hero() {
       return () => clearTimeout(timeout);
     }
 
-    // ✍️ typing (with single-letter glitch)
+    // typing (with single-letter glitch)
     if (!isDeleting) {
       timeout = setTimeout(() => {
         const next = progress + 1;
@@ -116,7 +116,7 @@ export default function Hero() {
     return () => clearTimeout(timeout);
   }, [progress, isDeleting, isWaiting, index]);
 
-  // 🎨 highlight system
+  // highlight system
   function renderText(text: string) {
     let output = text;
 
