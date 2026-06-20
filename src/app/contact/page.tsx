@@ -15,7 +15,7 @@ export default function Contact() {
           rel="noopener noreferrer"
           className="text-blue-500 hover:underline"
         >
-          here
+          here!
         </a>
       </p>
 
