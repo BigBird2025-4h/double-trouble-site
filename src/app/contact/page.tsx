@@ -10,7 +10,7 @@ export default function Contact() {
       <p className="text-gray-400 mb-6">
         Interested in joining? Fill out our form at:
         <a
-          href="https://forms.gle"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfdl_4pVvgRCfVlBzCo469z4SrniqjKgVdDEMVoCtGJ3m8uug/viewform?usp=sf_link"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-500 hover:underline"
