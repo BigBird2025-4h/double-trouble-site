@@ -4,11 +4,11 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 border-b border-[#30363d] bg-black/40 backdrop-blur">
       <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
-
         <div className="font-bold text-lg">
+          <Link href="/" className="font-bold text-lg"> 
           <span className="text-red-500">Double</span>{" "}
           <span className="text-blue-500">Trouble</span>
-          <Link href="/">Home</Link>
+          </Link>
         </div>
 
         <div className="flex gap-6 text-sm text-white">
