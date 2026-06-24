@@ -46,7 +46,8 @@ export default function Sections({
         >
           <Link href={sec.href}>
             <div
-              className={`p-8 rounded-xl border border-[#30363d] cursor-pointer transition-all duration-300 hover:-translate-y-1 ${
+            //white border, rounded corners, padding, hover effect with shadow and slight upward movement
+              className={`p-8 rounded-xl border border-white/10 cursor-pointer transition-all duration-300 hover:-translate-y-1 ${
                 sec.color === "red"
                   ? "hover:shadow-[0_0_40px_rgba(239,68,68,0.5)]"
                   : "hover:shadow-[0_0_40px_rgba(59,130,246,0.5)]"
