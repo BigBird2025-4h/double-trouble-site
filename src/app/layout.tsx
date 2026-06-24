@@ -20,7 +20,7 @@ export default function RootLayout({
         <Background />
         <Navbar />
 
-        <main className="max-w-6xl mx-auto px-6 py-10">
+        <main className="flex-1">
           {children}
         </main>
 
