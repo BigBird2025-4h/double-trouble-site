@@ -1,6 +1,7 @@
 export default function Footer() {
   return (
     <footer className="mt-24 border-t border-white/10 py-8">
+      
       <div className="max-w-6xl mx-auto px-6 text-center text-white/80">
         <p className="text-sm">
           © {new Date().getFullYear()} Noah H | Double Trouble | FTC team #35725

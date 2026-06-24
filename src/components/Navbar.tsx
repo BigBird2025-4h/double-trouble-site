@@ -8,6 +8,7 @@ export default function Navbar() {
         <div className="font-bold text-lg">
           <span className="text-red-500">Double</span>{" "}
           <span className="text-blue-500">Trouble</span>
+          <Link href="/">Home</Link>
         </div>
 
         <div className="flex gap-6 text-sm text-white">
@@ -17,7 +18,8 @@ export default function Navbar() {
           <Link href="/resources">Resources</Link>
           <Link href="/sponsors">Sponsors</Link>
           <Link href="/contact">Contact</Link>
-          <Link href="/more">More</Link>
+          <Link href="/outreach">Outreach</Link>
+          <Link href="/about">About</Link>
         </div>
 
       </div>
