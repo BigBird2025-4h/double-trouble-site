@@ -12,9 +12,8 @@ const CHARS =
 
 const BASE =
 
-  "Double Trouble is an FTC (FIRST Tech Challenge) team dedicated to ";
+  "Double Trouble is an FTC (FIRST Tech Challenge) team from Chattanooga, TN dedicated to ";
   
-
 const PHRASES = [
   {
     text: "designing, building and programming high-performance robots.",
@@ -145,7 +144,7 @@ export default function Hero() {
       >
         <span className="text-red-500">Double</span>{" "}
         <span className="text-blue-500">Trouble</span>
-        <span className="text-green-500"> #35725</span>
+        <span className="text-white-/80"> #35725</span>
       </motion.h1>
 
       <p

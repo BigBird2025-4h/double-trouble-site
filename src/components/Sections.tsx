@@ -64,11 +64,11 @@ export default function Sections({
 
               {/* BLOG CARD DYNAMIC PART */}
               {sec.title === "Blog / Media" && latestPost ? (
-                <p className="text-gray-400 text-sm capitalize">
+                <p className="text-white/80 text-sm capitalize">
                   Latest: {latestPost.title}
                 </p>
               ) : (
-                <p className="text-gray-400 text-sm">
+                <p className="text-white/80 text-sm">
                   {sec.description}
                 </p>
               )}
