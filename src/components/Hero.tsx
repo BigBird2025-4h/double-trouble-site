@@ -103,7 +103,7 @@ export default function Hero() {
       }, 30);
     }
 
-    // ⌫ deleting
+    // deleting
     else {
       timeout = setTimeout(() => {
         const next = progress - 1;
@@ -145,10 +145,11 @@ export default function Hero() {
       >
         <span className="text-red-500">Double</span>{" "}
         <span className="text-blue-500">Trouble</span>
+        <span className="text-green-500"> #35725</span>
       </motion.h1>
 
       <p
-        className={`${jetbrains.className} text-gray-400 max-w-2xl mx-auto text-lg`}
+        className={`${jetbrains.className} text-white-/80 max-w-2xl mx-auto text-lg`}
       >
         <span
           dangerouslySetInnerHTML={{

@@ -30,7 +30,7 @@ console.log("EXISTS:", fs.existsSync(filePath));
 
   return (
     <div className="max-w-3xl mx-auto">
-      <pre className="whitespace-pre-wrap text-gray-300">
+      <pre className="whitespace-pre-wrap text-white/80 bg-[#0d1117] p-6 rounded-lg mt-8">
         {content}
       </pre>
     </div>
