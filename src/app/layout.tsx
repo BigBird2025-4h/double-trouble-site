@@ -16,11 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col text-white">
         <Background />
         <Navbar />
 
-        <main className="flex-1 max-w-6xl mx-auto px-6 py-10 pb-24">
+        <main className="flex-1 max-w-6xl mx-auto px-6 py-10">
           {children}
         </main>
 
