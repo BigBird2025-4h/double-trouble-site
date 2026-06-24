@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
     <footer className="mt-24 border-t border-white/10 py-8">
-      <div className="max-w-6xl mx-auto px-6 text-center text-gray-400">
+      <div className="max-w-6xl mx-auto px-6 text-center text-white-/80">
         <p className="text-sm">
-          © {new Date().getFullYear()} Double Trouble FTC
+          © {new Date().getFullYear()} Double Trouble FTC #35725
         </p>
 
         <div className="mt-4 flex justify-center gap-6 text-sm">

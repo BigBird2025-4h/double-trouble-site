@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { JetBrains_Mono } from "next/font/google";
 import { motion } from "framer-motion";
+import { text } from "stream/consumers";
 
 const jetbrains = JetBrains_Mono({ subsets: ["latin"] });
 
@@ -10,7 +11,9 @@ const CHARS =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
 
 const BASE =
+
   "Double Trouble is an FTC (FIRST Tech Challenge) team dedicated to ";
+  
 
 const PHRASES = [
   {
