@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="mt-auto border-t border-[#30363d] bg-black/40 backdrop-blur">
+    <footer className="border-t border-[#30363d] bg-black/40 backdrop-blur">
       <div className="max-w-6xl mx-auto px-6 py-8 text-center text-white/80">
         <p className="text-sm">
           © {new Date().getFullYear()} Noah H | Double Trouble | FTC Team #35725
@@ -18,7 +18,7 @@ export default function Footer() {
           </a>
         </div>
 
-        <p className="mt-4 text-xs text-gray-500">
+        <p className="mt-4 text-xs text-white-/80">
           Built with Next.js + Vercel
         </p>
       </div>
