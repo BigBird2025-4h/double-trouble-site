@@ -14,19 +14,20 @@ export default function PortfolioPage() {
 
         <div className="border border-[#30363d] p-6 rounded-xl hover:shadow-[0_0_25px_rgba(255,0,0,0.25)] transition">
           <h2 className="text-xl font-bold text-red-500 mb-2">
-            Robot Design v1
+            2026 CC portfolio
           </h2>
           <p className="text-gray-400 text-sm">
-            Early drivetrain and chassis development focused on stability and speed.
+            Our FTC Discord CAD Competition 2026 portfolio 
           </p>
         </div>
 
         <div className="border border-[#30363d] p-6 rounded-xl hover:shadow-[0_0_25px_rgba(0,0,255,0.25)] transition">
           <h2 className="text-xl font-bold text-blue-500 mb-2">
-            Autonomous System
+            Github
           </h2>
           <p className="text-gray-400 text-sm">
-            Vision-assisted autonomous routines and path planning experiments.
+            <a>href=https://github.com/Double-Trouble-FTC-35725 </a>
+            Access our Github here! 
           </p>
         </div>
 
