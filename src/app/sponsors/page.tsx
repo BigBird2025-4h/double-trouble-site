@@ -6,7 +6,7 @@ export default function SponsorsPage() {
       </h1>
 
       <p className="text-gray-200 max-w-2xl mb-10">
-        We are grateful for the support of our sponsors who help make our FTC robotics program possible.
+        We haven't been sponsored by anyone yet; your support would be much appreciated!
       </p>
 
       {/* Sponsor Grid */}
@@ -45,7 +45,7 @@ export default function SponsorsPage() {
         </p>
 
         <a
-          href="/contact"
+          href="https://hcb.hackclub.com/donations/start/double-trouble"
           className="inline-block px-6 py-3 rounded-lg border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-black transition"
         >
           Become a Sponsor
