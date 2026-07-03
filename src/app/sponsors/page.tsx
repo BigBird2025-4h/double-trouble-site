@@ -29,7 +29,8 @@ export default function SponsorsPage() {
       {/* Sponsorship Levels */}
 <div className="mb-16">
   <h2 className="text-3xl font-bold mb-8">
-    <span className="text-blue-500">Sponsorship Levels</span>
+    <span className="text-blue-500">Sponsorship</span>
+    <span className="text-red-500"> Levels</span>
   </h2>
 
   <div className="grid gap-6 md:grid-cols-2">
@@ -81,7 +82,6 @@ export default function SponsorsPage() {
         <li>Everything in heavyweight level.</li>
         <li>Large logo on our website.</li>
         <li>Logo featured on our team banner.</li>
-        <li>Shout-out at outreach events when possible.</li>
       </ul>
     </div>
 
@@ -98,7 +98,7 @@ export default function SponsorsPage() {
       <ul className="space-y-2 text-gray-300 list-disc list-inside">
         <li>Everything in Knockout level.</li>
         <li>Premier logo placement on our website.</li>
-        <li>Featured on the robot (space permitting).</li>
+        <li>Featured on the robot.</li>
         <li>Special recognition as a major team sponsor.</li>
       </ul>
     </div>
