@@ -14,7 +14,7 @@
 
       <p className="text-blue-400 font-medium mb-4">
         $100+
-      </p>
+      </p> 
 
       <ul className="space-y-2 text-gray-300 list-disc list-inside">
         <li>Name listed on our website.</li>
