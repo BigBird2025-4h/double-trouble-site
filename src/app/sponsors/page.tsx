@@ -1,4 +1,32 @@
-{/* Sponsorship Levels */}
+export default function SponsorsPage() {
+  return (
+    <div>
+      <h1 className="text-4xl font-bold mb-6">
+        <span className="text-blue-500">Sponsors</span>
+      </h1>
+
+      <p className="text-gray-200 max-w-2xl mb-10">
+        We haven't been sponsored by anyone yet; your support would be much appreciated!
+      </p>
+
+      {/* Sponsor Grid */}
+      <div className="grid md:grid-cols-3 gap-6 mb-16">
+
+        <div className="border border-[#30363d] rounded-xl p-6 flex items-center justify-center text-gray-400 hover:shadow-[0_0_20px_rgba(0,0,255,0.2)] transition">
+          Sponsor Logo
+        </div>
+
+        <div className="border border-[#30363d] rounded-xl p-6 flex items-center justify-center text-gray-400 hover:shadow-[0_0_20px_rgba(255,0,0,0.2)] transition">
+          Sponsor Logo
+        </div>
+
+        <div className="border border-[#30363d] rounded-xl p-6 flex items-center justify-center text-gray-400 hover:shadow-[0_0_20px_rgba(0,0,255,0.2)] transition">
+          Sponsor Logo
+        </div>
+
+      </div>
+
+      {/* Sponsorship Levels */}
 <div className="mb-16">
   <h2 className="text-3xl font-bold mb-8">
     <span className="text-blue-500">Sponsorship Levels</span>
@@ -77,3 +105,20 @@
 
   </div>
 </div>
+      
+      {/* CTA */}
+      <div className="mt-12 text-center">
+        <p className="text-gray-500 mb-4">
+          Interested in supporting our team?
+        </p>
+
+        <a
+          href="https://hcb.hackclub.com/donations/start/double-trouble"
+          className="inline-block px-6 py-3 rounded-lg border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-black transition"
+        >
+          Become a Sponsor
+        </a>
+      </div>
+    </div>
+  );
+}
