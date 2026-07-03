@@ -28,9 +28,10 @@ export default function SponsorsPage() {
 
       {/* Sponsorship Levels */}
 <div className="mb-16">
-  <h2 className="text-3xl font-bold mb-8">
-    <span className="text-blue-500">Sponsorship</span>
-    <span className="text-red-500"> Levels</span>
+  <h2 className="text-4xl font-bold mb-8">
+    <text className="center"></text>
+    <span className="text-red-500">Sponsorship</span>
+    <span className="text-blue-500"> Levels</span>
   </h2>
 
   <div className="grid gap-6 md:grid-cols-2">
