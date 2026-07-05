@@ -19,8 +19,6 @@ export default function ResourcesPage() {
           </h2>
           <ul className="text-gray-400 space-y-2 text-sm">
             <li>• Onshape (3D Modeling)</li>
-            <li>• Fusion 360 (Advanced Design)</li>
-            <li>• Basic Mechanical Sketching</li>
           </ul>
         </div>
 
@@ -31,8 +29,8 @@ export default function ResourcesPage() {
           </h2>
           <ul className="text-gray-400 space-y-2 text-sm">
             <li>• Java / Kotlin (FTC SDK)</li>
-            <li>• Road Runner / Motion Planning</li>
-            <li>• Git & GitHub Version Control</li>
+            <li>• Our custom pathing software</li>
+            <li>• Team Github</li>
           </ul>
         </div>
 
@@ -48,15 +46,18 @@ export default function ResourcesPage() {
           </ul>
         </div>
 
-        {/* Learning */}
+        {/* Learning links*/}
         <div className="border border-[#30363d] rounded-xl p-6">
           <h2 className="text-xl font-semibold text-white mb-2">
             Learning Resources
           </h2>
           <ul className="text-gray-400 space-y-2 text-sm">
-            <li>• FIRST Tech Challenge Docs</li>
-            <li>• FTC Discord Community</li>
-            <li>• YouTube Engineering Breakdowns</li>
+            <li>• Java for FTC</li>
+            <li><a href="https://github.com/alan412/LearnJavaForFTC/blob/master/LearnJavaForFTC.pdf" className="text-blue-400 hover:text-blue-300">Learn Java for FTC (PDF)</a></li>
+            <li>• FTC Discord</li>
+            <li><a href="https://discord.com/invite/ftc" className="text-blue-400 hover:text-blue-300">FTC Discord Server</a></li>
+            <li>• Best Youtube Resources</li>
+            <li><a href="https://www.youtube.com/channel/UCTvd5lUSLtTH8Qcd7Pl1nQg" className="text-blue-400 hover:text-blue-300">Official Onshape YouTube Channel</a></li>
           </ul>
         </div>
 
