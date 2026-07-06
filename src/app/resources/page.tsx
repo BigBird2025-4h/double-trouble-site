@@ -6,7 +6,7 @@ export default function ResourcesPage() {
       </h1>
 
       <p className="text-gray-400 max-w-2xl mb-10">
-        Tools, guides, and systems we use to design, build, and program our FTC robots.
+        Tools and guides to help you build skills for FIRST Tech Challenge. By the way, hi Leo! 👋 I can see you reading this right now 😁
       </p>
 
       {/* Grid */}
@@ -17,9 +17,9 @@ export default function ResourcesPage() {
           <h2 className="text-xl font-semibold text-white mb-2">
             CAD & Design
           </h2>
-          <ul className="text-gray-400 space-y-2 text-sm">
+          <ul className="text-red-400 space-y-2 text-sm">
             <li>• Onshape (3D Modeling)</li>
-            <li><a href="https://www.youtube.com/channel/UCTvd5lUSLtTH8Qcd7Pl1nQg" className="text-blue-400 hover:text-blue-300">Official Onshape YouTube Channel</a></li>
+            <li><a href="https://www.youtube.com/channel/UCTvd5lUSLtTH8Qcd7Pl1nQg" className="text-blue-400 hover:text-red-300">Official Onshape YouTube Channel</a></li>
           </ul>
         </div>
 
@@ -28,13 +28,13 @@ export default function ResourcesPage() {
           <h2 className="text-xl font-semibold text-white mb-2">
             Software
           </h2>
-          <ul className="text-gray-400 space-y-2 text-sm">
+          <ul className="text-blue-400 space-y-2 text-sm">
             <li>• Java and Kotlin</li>
-            <li><a href="https://github.com/alan412/LearnJavaForFTC/blob/master/LearnJavaForFTC.pdf" className="text-blue-400 hover:text-blue-300">Learn Java for FTC (PDF)</a></li>
-            <li><a href="https://www.codecademy.com/learn/learn-kotlin" className="text-red-400 hover:text-red-300">Learn Kotlin (codecademy)</a></li>
+            <li><a href="https://github.com/alan412/LearnJavaForFTC/blob/master/LearnJavaForFTC.pdf" className="text-blue-400 hover:text-red-300">Learn Java for FTC (PDF)</a></li>
+            <li><a href="https://www.codecademy.com/learn/learn-kotlin" className="text-blue-400 hover:text-red-300">Learn Kotlin (codecademy)</a></li>
             <li>• Our custom pathing software (coming soon!)</li>
             <li>• Team Github</li>
-            <li><a href="https://github.com/orgs/Double-Trouble-FTC-35725" className="text-red-400 hover:text-red-300">Team Github</a></li>
+            <li><a href="https://github.com/orgs/Double-Trouble-FTC-35725" className="text-blue-400 hover:text-red-300">Team Github</a></li>
           </ul>
         </div>
 
@@ -43,7 +43,7 @@ export default function ResourcesPage() {
           <h2 className="text-xl font-semibold text-white mb-2">
             Competition Strategy
           </h2>
-          <ul className="text-gray-400 space-y-2 text-sm">
+          <ul className="text-red-400 space-y-2 text-sm">
             <li>• Game manual analysis</li>
             <li>• Autonomous scoring planning</li>
             <li>• Driver practice routines</li>
@@ -55,13 +55,13 @@ export default function ResourcesPage() {
           <h2 className="text-xl font-semibold text-white mb-2">
             Learning Resources
           </h2>
-          <ul className="text-gray-400 space-y-2 text-sm">
+          <ul className="text-blue-400 space-y-2 text-sm">
             <li>• Java for FTC</li>
-            <li><a href="https://github.com/alan412/LearnJavaForFTC/blob/master/LearnJavaForFTC.pdf" className="text-blue-400 hover:text-blue-300">Learn Java for FTC (PDF)</a></li>
+            <li><a href="https://github.com/alan412/LearnJavaForFTC/blob/master/LearnJavaForFTC.pdf" className="text-blue-400 hover:text-red-300">Learn Java for FTC (PDF)</a></li>
             <li>• FTC Discord</li>
-            <li><a href="https://discord.com/invite/ftc" className="text-blue-400 hover:text-blue-300">FTC Discord Server</a></li>
+            <li><a href="https://discord.com/invite/ftc" className="text-blue-400 hover:text-red-300">FTC Discord Server</a></li>
             <li>• Best Youtube Resources</li>
-            <li><a href="https://www.youtube.com/channel/UCTvd5lUSLtTH8Qcd7Pl1nQg" className="text-blue-400 hover:text-blue-300">Official Onshape YouTube Channel</a></li>
+            <li><a href="https://www.youtube.com/channel/UCTvd5lUSLtTH8Qcd7Pl1nQg" className="text-blue-400 hover:text-red-300">Official Onshape YouTube Channel</a></li>
           </ul>
         </div>
 
