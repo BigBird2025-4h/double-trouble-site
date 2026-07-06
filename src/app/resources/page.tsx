@@ -19,6 +19,7 @@ export default function ResourcesPage() {
           </h2>
           <ul className="text-gray-400 space-y-2 text-sm">
             <li>• Onshape (3D Modeling)</li>
+            <li><a href="https://www.youtube.com/channel/UCTvd5lUSLtTH8Qcd7Pl1nQg" className="text-blue-400 hover:text-blue-300">Official Onshape YouTube Channel</a></li>
           </ul>
         </div>
 
@@ -28,9 +29,12 @@ export default function ResourcesPage() {
             Software
           </h2>
           <ul className="text-gray-400 space-y-2 text-sm">
-            <li>• Java / Kotlin (FTC SDK)</li>
-            <li>• Our custom pathing software</li>
+            <li>• Java and Kotlin</li>
+            <li><a href="https://github.com/alan412/LearnJavaForFTC/blob/master/LearnJavaForFTC.pdf" className="text-blue-400 hover:text-blue-300">Learn Java for FTC (PDF)</a></li>
+            <li><a href="https://www.codecademy.com/learn/learn-kotlin" className="text-red-400 hover:text-red-300">Learn Kotlin (codecademy)</a></li>
+            <li>• Our custom pathing software (coming soon!)</li>
             <li>• Team Github</li>
+            <li><a href="https://github.com/orgs/Double-Trouble-FTC-35725" className="text-red-400 hover:text-red-300">Team Github</a></li>
           </ul>
         </div>
 
