@@ -6,7 +6,7 @@ export default function ResourcesPage() {
       </h1>
 
       <p className="text-gray-400 max-w-2xl mb-10">
-        Tools and guides to help you build skills for FIRST Tech Challenge. By the way, hi Leo! 👋 I can see you reading this right now 😁
+        Tools and guides to help you build skills for FIRST Tech Challenge. For direct mentorship please contact us! We would love to work with you in person or over zoom to help you in any way we can. 
       </p>
 
       {/* Grid */}
@@ -47,6 +47,7 @@ export default function ResourcesPage() {
             <li>• Game manual analysis</li>
             <li>• Autonomous scoring planning</li>
             <li>• Driver practice routines</li>
+            
           </ul>
         </div>
 
