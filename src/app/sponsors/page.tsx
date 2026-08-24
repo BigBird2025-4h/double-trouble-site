@@ -25,7 +25,7 @@ export default function SponsorsPage() {
         </p>
       ) : (
         <p className="text-gray-200 max-w-2xl mb-10">
-          Thank you to the sponsors who make it possible for our team to compete.
+          Thank you to the sponsors who make it possible for our team to compete!
         </p>
       )}
 
@@ -59,7 +59,7 @@ export default function SponsorsPage() {
 
         <div className="grid gap-6 md:grid-cols-2">
           {/* Tier 1 */}
-          <div className="rounded-xl border border-[#30363d] p-6 bg-[#111827]/40">
+          <div className="rounded-xl border-2 border-red-500 p-6 bg-red-500/5 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
             <h3 className="text-2xl font-semibold text-gray-100 mb-2">
               Rookie level
             </h3>
@@ -71,7 +71,7 @@ export default function SponsorsPage() {
           </div>
 
           {/* Tier 2 */}
-          <div className="rounded-xl border border-[#30363d] p-6 bg-[#111827]/40">
+          <div className="rounded-xl border-2 border-blue-500 p-6 bg-blue-500/5 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
             <h3 className="text-2xl font-semibold text-gray-100 mb-2">
               heavyweight level
             </h3>
@@ -84,7 +84,7 @@ export default function SponsorsPage() {
           </div>
 
           {/* Tier 3 */}
-          <div className="rounded-xl border border-[#30363d] p-6 bg-[#111827]/40">
+          <div className="rounded-xl border-2 border-red-500 p-6 bg-red-500/5 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
             <h3 className="text-2xl font-semibold text-gray-100 mb-2">
               Knockout level
             </h3>
