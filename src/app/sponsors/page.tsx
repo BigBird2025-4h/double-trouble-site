@@ -5,7 +5,7 @@ import Image from "next/image";
 const sponsors = [
   {
     name: "Scenic City Orthodontics",
-    logo: "/sponsors/SCO LOGO 2.png",
+    logo: "src/app/sponsors/SCO LOGO 2.png",
     url: "https://www.sceniccityortho.com/",
   },
   // { name: "...", logo: "/sponsors/...", url: "..." },
