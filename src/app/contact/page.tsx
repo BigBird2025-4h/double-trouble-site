@@ -1,14 +1,15 @@
 export default function Contact() {
   return (
     <div className="max-w-xl mx-auto mt-20 text-center">
-      <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
+      <h1 className="text-3xl-text-red-400 font-bold mb-6">Contact
+        <span className="text-blue-400"> Us</span>
 
       <p className="text-white mb-6">
         Reach out for sponsorships, collaboration, or questions. We'd love to hear from you!
       </p>
 
       <p className="text-white mb-6">
-        Interested in joining? Fill out our form 
+        Interested in joining? Fill out our form &nbsp;
         <a
           href="https://forms.gle/we221JcbqTefauhj7"
           target="_blank"
