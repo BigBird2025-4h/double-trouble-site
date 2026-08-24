@@ -61,25 +61,26 @@ export default function SponsorsPage() {
           {/* Tier 1 */}
           <div className="rounded-xl border-2 border-red-500 p-6 bg-red-500/5 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
             <h3 className="text-2xl font-semibold text-gray-100 mb-2">
-              Rookie level
+              Featherweight level
             </h3>
             <p className="text-blue-400 font-medium mb-4">$100+</p>
             <ul className="space-y-2 text-gray-300 list-disc list-inside">
-              <li>Name listed on our website.</li>
-              <li>Thank-you on our social media.</li>
+              <li>Name and logo displayed on our website</li>
+              <li>Name and logo displayed on our team banner</li>
             </ul>
           </div>
 
           {/* Tier 2 */}
           <div className="rounded-xl border-2 border-blue-500 p-6 bg-blue-500/5 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
             <h3 className="text-2xl font-semibold text-gray-100 mb-2">
-              heavyweight level
+              Heavyweight level
             </h3>
             <p className="text-blue-400 font-medium mb-4">$500+</p>
             <ul className="space-y-2 text-gray-300 list-disc list-inside">
               <li>Everything in Rookie Level.</li>
-              <li>Small logo displayed on our website.</li>
-              <li>Recognition on team promotional materials.</li>
+              <li>Name and logo displayed on our website.</li>
+              <li>Name and logo displayed on our team banner</li>
+              <li>Small logo on t-shirts</li>
             </ul>
           </div>
 
@@ -90,9 +91,10 @@ export default function SponsorsPage() {
             </h3>
             <p className="text-blue-400 font-medium mb-4">$1,000+</p>
             <ul className="space-y-2 text-gray-300 list-disc list-inside">
-              <li>Everything in heavyweight level.</li>
-              <li>Large logo on our website.</li>
-              <li>Logo featured on our team banner.</li>
+              <li>Large logo on our website</li>
+              <li>large logo on t-shirts</li>
+              <li>Name and logo displayed on our team banner </li>
+              <li>small logo on our robot </li>
             </ul>
           </div>
 
@@ -103,10 +105,12 @@ export default function SponsorsPage() {
             </h3>
             <p className="text-blue-300 font-medium mb-4">$2,500+</p>
             <ul className="space-y-2 text-gray-300 list-disc list-inside">
-              <li>Everything in Knockout level.</li>
-              <li>Premier logo placement on our website.</li>
-              <li>Featured on the robot.</li>
-              <li>Special recognition as a major team sponsor.</li>
+              <li>Large logo on our website</li>
+              <li>Name and logo displayed on our team banner </li>
+              <li>Large logo on t-shirts</li>
+              <li>Large logo on our robot</li>
+              <li>Outreach event at your business/or location of choice (time/location subject to scheduling and logistics)</li>
+              <li>Logo featured on our team banner at competitions</li>
             </ul>
           </div>
         </div>
