@@ -15,7 +15,7 @@ export default function Contact() {
           href="https://forms.gle/we221JcbqTefauhj7"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white- hover:underline"
+          className="text-white- hover:text gradient-to-r from-red-500 to-purple-500 font-semibold"
         >
           here!
         </a>
