@@ -25,7 +25,7 @@ export default function Contact() {
         href="mailto:doubletroubleftc@gmail.com"
         className="px-6 py-3 bg-white text-black rounded-lg"
       >
-        Email Us!
+        Email Us at doubletroubleftc@gmail.com or call 423-759-3136!
       </a>
     </div>
   );
