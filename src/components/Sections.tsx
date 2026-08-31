@@ -36,7 +36,7 @@ export default function Sections({
   latestPost?: { slug: string; title: string };
 }) {
   return (
-    <div className="grid md:grid-cols-2 gap-6 mt-24">
+    <div className="grid md:grid-cols-2 gap-8 mt-20">
       {sections.map((sec, i) => (
         <motion.div
           key={sec.title}
@@ -46,30 +46,33 @@ export default function Sections({
         >
           <Link href={sec.href}>
             <div
-            //white border, rounded corners, padding, hover effect with shadow and slight upward movement
-              className={`p-8 rounded-xl border border-white/10 cursor-pointer transition-all duration-300 hover:-translate-y-1 ${
-                sec.color === "red"
-                  ? "hover:shadow-[0_0_40px_rgba(239,68,68,0.5)]"
-                  : "hover:shadow-[0_0_40px_rgba(59,130,246,0.5)]"
+              className={`paper-panel p-8 cursor-pointer transition-transform duration-200 hover:-translate-y-1 hover:-rotate-1 ${
+                i % 2 === 0 ? "-rotate-1" : "rotate-1"
+              } ${
+                sec.color === "red" ? "print-shadow-red" : "print-shadow-blue"
               }`}
             >
+              {/* halftone corner accent */}
+              <div
+                className={`absolute -top-3 -right-3 w-14 h-14 halftone rounded-full opacity-70 ${
+                  sec.color === "red" ? "text-punch-red" : "text-steel-blue"
+                }`}
+              />
+
               <h2
-                className={`text-2xl font-bold mb-2 ${
-                  sec.color === "red"
-                    ? "text-red-500"
-                    : "text-blue-500"
+                className={`font-display text-xl mb-3 ${
+                  sec.color === "red" ? "text-punch-red" : "text-steel-blue"
                 }`}
               >
                 {sec.title}
               </h2>
 
-              {/* BLOG CARD DYNAMIC PART */}
               {sec.title === "Blog / Media" && latestPost ? (
-                <p className="text-white/80 text-sm capitalize">
+                <p className="text-charcoal/80 text-sm capitalize font-medium">
                   Latest: {latestPost.title}
                 </p>
               ) : (
-                <p className="text-white/80 text-sm">
+                <p className="text-charcoal/80 text-sm font-medium">
                   {sec.description}
                 </p>
               )}
