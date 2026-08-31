@@ -1,46 +1,108 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  /* Core palette — muted, weathered primaries */
+  --color-punch-red: #c73a33;
+  --color-steel-blue: #3d74b8;
+  --color-mustard-gold: #e5b22f;
+  --color-cream: #f6f0e3;
+  --color-charcoal: #222222;
+
+  /* Derived shades for depth, shadows, pressed states */
+  --color-cream-dark: #ece1c8;
+  --color-red-dark: #8f2b25;
+  --color-blue-dark: #2c5a8f;
+  --color-gold-dark: #b8871f;
+  --color-ink: rgba(34, 34, 34, 0.88);
+
+  --background: var(--color-cream);
+  --foreground: var(--color-charcoal);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-punch-red: var(--color-punch-red);
+  --color-steel-blue: var(--color-steel-blue);
+  --color-mustard-gold: var(--color-mustard-gold);
+  --color-cream: var(--color-cream);
+  --color-charcoal: var(--color-charcoal);
+  --color-cream-dark: var(--color-cream-dark);
+  --color-red-dark: var(--color-red-dark);
+  --color-blue-dark: var(--color-blue-dark);
+  --color-gold-dark: var(--color-gold-dark);
+
+  --font-display: var(--font-bungee);
+  --font-body: var(--font-barlow);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
 }
 
-@keyframes blink {
-  0%, 50%, 100% {
-    opacity: 1;
-  }
-  25%, 75% {
-    opacity: 0;
-  }
+/* ============ TEXTURE SYSTEM ============ */
+
+/* Subtle paper grain — layered fractal noise, applied as a fixed overlay */
+.grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+  opacity: 0.15;
 }
+
+/* Halftone dot field — used behind badges, hero art, card corners */
+.halftone {
+  background-image: radial-gradient(
+    currentColor 1.1px,
+    transparent 1.2px
+  );
+  background-size: 7px 7px;
+}
+
+/* Printed "misregistration" shadow — offset flat color instead of blur */
+.print-shadow {
+  box-shadow: 5px 5px 0 0 var(--color-charcoal);
+}
+.print-shadow-red {
+  box-shadow: 5px 5px 0 0 var(--color-red-dark);
+}
+.print-shadow-blue {
+  box-shadow: 5px 5px 0 0 var(--color-blue-dark);
+}
+.print-shadow-gold {
+  box-shadow: 5px 5px 0 0 var(--color-gold-dark);
+}
+
+/* Toy-box "paper panel" card base */
+.paper-panel {
+  background-color: var(--color-cream);
+  border: 3px solid var(--color-charcoal);
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Faded / weathered color modifier — reduces saturation feel via overlay */
+.weathered {
+  position: relative;
+  isolation: isolate;
+}
+.weathered::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-cream);
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ============ MOTION ============ */
 
 @keyframes blink {
   0%, 49% { opacity: 1; }
   50%, 100% { opacity: 0; }
-}
-
-@keyframes glitchBlink {
-  0%, 80%, 100% { opacity: 1; }
-  85% { opacity: 0; }
-  90% { opacity: 1; }
-  95% { opacity: 0; }
-}
-
-.cursor {
-  animation: glitchBlink 1.2s infinite;
 }
 
 .cursor {
@@ -49,22 +111,19 @@ body {
   animation: blink 1s step-end infinite;
 }
 
-.text-glow-green {
-  text-shadow: 0 0 8px rgba(74, 222, 128, 0.7);
+@keyframes stampIn {
+  0% { opacity: 0; transform: scale(1.3) rotate(-6deg); }
+  60% { opacity: 1; transform: scale(0.96) rotate(2deg); }
+  100% { opacity: 1; transform: scale(1) rotate(-2deg); }
 }
 
-.text-glow-orange {
-  text-shadow: 0 0 8px rgba(251, 146, 60, 0.7);
+.stamp-in {
+  animation: stampIn 0.5s cubic-bezier(0.2, 0.9, 0.3, 1) both;
 }
 
-.text-glow-purple {
-  text-shadow: 0 0 8px rgba(168, 85, 247, 0.7);
-}
-
-.text-glow-blue {
-  text-shadow: 0 0 8px rgba(96, 165, 250, 0.7);
-}
-
-.text-glow-red {
-  text-shadow: 0 0 8px rgba(248, 113, 113, 0.7);
+@media (prefers-reduced-motion: reduce) {
+  .cursor,
+  .stamp-in {
+    animation: none !important;
+  }
 }
