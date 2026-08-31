@@ -6,7 +6,7 @@ export default function Contact() {
       </h1>
 
       <p className="text-white mb-6">
-        Reach out for sponsorships, collaboration, or questions. We'd love to hear from you! Email at doubletroubleftc@gmail.com or call 423-749-3136.
+        Reach out for sponsorships, collaboration, or questions. We'd love to hear from you! Email at doubletrouble35725@gmail.com or call 423-749-3136.
       </p>
 
       <p className="text-white mb-6">
@@ -22,7 +22,7 @@ export default function Contact() {
       </p>
 
       <a
-        href="mailto:doubletroubleftc@gmail.com"
+        href="mailto:doubletrouble35725@gmail.com"
         className="px-6 py-3 bg-white text-black rounded-lg"
       >
         Email Us!
