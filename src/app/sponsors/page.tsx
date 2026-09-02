@@ -1,14 +1,12 @@
 import Image from "next/image";
 
-// Add your sponsors here. Put logo files in /public/sponsors/
-// and reference them as "/sponsors/filename.png"
 const sponsors = [
   {
     name: "Scenic City Orthodontics",
     logo: "public/sponsors/SCO-LOGO-2.png",
     url: "https://www.sceniccityortho.com/",
   },
-  // { name: "...", logo: "/sponsors/...", url: "..." },
+
 ];
 
 export default function SponsorsPage() {
