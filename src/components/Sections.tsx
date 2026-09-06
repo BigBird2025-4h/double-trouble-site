@@ -39,18 +39,9 @@ const sponsors = [
   },
 ];
 
-function SponsorGrid() {
+export function SponsorGrid() {
   return (
     <div>
-      <h1 className="font-display text-3xl sm:text-4xl mb-6">
-        <span className="text-steel-blue">Sponsors</span>
-      </h1>
-
-      <p className="text-charcoal/80 max-w-2xl mb-10 font-medium">
-        {sponsors.length === 0
-          ? "We haven't been sponsored by anyone yet; your support would be much appreciated!"
-          : "Thank you to the sponsors who make it possible for our team to compete!"}
-      </p>
 
       {/* Sponsor Grid */}
       {sponsors.length > 0 && (
