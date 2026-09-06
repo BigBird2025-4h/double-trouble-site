@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const sections = [
   {
@@ -30,6 +31,55 @@ const sections = [
   },
 ];
 
+const sponsors = [
+  {
+    name: "Scenic City Orthodontics",
+    logo: "/sponsors/SCO-LOGO-2.png",
+    url: "https://www.sceniccityortho.com/",
+  },
+];
+
+function SponsorGrid() {
+  return (
+    <div>
+      <h1 className="font-display text-3xl sm:text-4xl mb-6">
+        <span className="text-steel-blue">Sponsors</span>
+      </h1>
+
+      <p className="text-charcoal/80 max-w-2xl mb-10 font-medium">
+        {sponsors.length === 0
+          ? "We haven't been sponsored by anyone yet; your support would be much appreciated!"
+          : "Thank you to the sponsors who make it possible for our team to compete!"}
+      </p>
+
+      {/* Sponsor Grid */}
+      {sponsors.length > 0 && (
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
+          {sponsors.map((sponsor, i) => (
+            <a
+              key={sponsor.name}
+              href={sponsor.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`paper-panel p-6 flex items-center justify-center hover:-translate-y-1 transition ${
+                i % 2 === 0 ? "print-shadow-blue" : "print-shadow-red"
+              }`}
+            >
+              <Image
+                src={sponsor.logo}
+                alt={`${sponsor.name} logo`}
+                width={200}
+                height={100}
+                className="object-contain"
+              />
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Sections({
   latestPost,
 }: {
@@ -52,12 +102,6 @@ export default function Sections({
                 sec.color === "red" ? "print-shadow-red" : "print-shadow-blue"
               }`}
             >
-              {/* halftone corner accent */}
-              <div
-                className={`absolute -top-3 -right-3 w-14 h-14 halftone rounded-full opacity-70 ${
-                  sec.color === "red" ? "text-punch-red" : "text-steel-blue"
-                }`}
-              />
 
               <h2
                 className={`font-display text-xl mb-3 ${
