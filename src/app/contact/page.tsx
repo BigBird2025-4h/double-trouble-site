@@ -1,21 +1,22 @@
 export default function Contact() {
   return (
-    <div className="max-w-xl mx-auto mt-20 text-center">
-      <h1 className="text-3xl font-bold mb-6 text-red-400">Contact
-        <span className="text-blue-400"> Us</span>
+    <div className="max-w-xl mx-auto mt-10 text-center paper-panel p-10 print-shadow">
+      <h1 className="font-display text-2xl sm:text-3xl mb-6 text-punch-red">
+        Contact Us
       </h1>
 
-      <p className="text-white mb-6">
-        Reach out for sponsorships, collaboration, or questions. We'd love to hear from you! Email at doubletrouble35725@gmail.com or call 423-749-3136.
+      <p className="text-charcoal/80 mb-6 font-medium">
+        Reach out for sponsorships, collaboration, or questions. We&apos;d
+        love to hear from you! Call 423-749-3136 or email us at doubletrouble35725@gmail.com.
       </p>
 
-      <p className="text-white mb-6">
-        Interested in joining? Fill out our form &nbsp;
+      <p className="text-charcoal/80 mb-6 font-medium">
+        Interested in joining? Fill out our form{" "}
         <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLScOhhXf0-mxo7Gzb8OgqeeWJu6_c34c3Hwn1MBDSP1LNSLOZw/viewform?usp=dialog"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfdl_4pVvgRCfVlBzCo469z4SrniqjKgVdDEMVoCtGJ3m8uug/viewform?usp=sf_link"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white- hover:text gradient-to-r from-red-500 to-blue-500 font-semibold"
+          className="text-steel-blue hover:text-punch-red underline"
         >
           here!
         </a>
@@ -23,7 +24,7 @@ export default function Contact() {
 
       <a
         href="mailto:doubletrouble35725@gmail.com"
-        className="px-6 py-3 bg-white text-black rounded-lg"
+        className="inline-block px-6 py-3 rounded-lg border-[3px] border-charcoal bg-mustard-gold text-charcoal font-display text-sm print-shadow hover:-translate-y-0.5 transition-transform"
       >
         Email Us!
       </a>

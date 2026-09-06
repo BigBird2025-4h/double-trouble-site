@@ -98,6 +98,8 @@ body {
   z-index: 1;
 }
 
+/* ============ MOTION ============ */
+
 @keyframes blink {
   0%, 49% { opacity: 1; }
   50%, 100% { opacity: 0; }

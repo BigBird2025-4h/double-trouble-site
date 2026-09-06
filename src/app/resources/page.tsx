@@ -1,71 +1,38 @@
-export default function ResourcesPage() {
+export default function PortfolioPage() {
   return (
     <div>
-      <h1 className="text-4xl font-bold mb-6">
-        <span className="text-red-500">Resources</span>
+      <h1 className="font-display text-3xl sm:text-4xl mb-6">
+        <span className="text-punch-red">Portfolio</span>
       </h1>
 
-      <p className="text-gray-400 max-w-2xl mb-10">
-        Tools and guides to help you build skills for FIRST Tech Challenge. For direct mentorship please contact us! We would love to work with you in person or over zoom to help you in any way we can. 
+      <p className="text-charcoal/80 mb-10 max-w-2xl font-medium">
+        Our robotics builds, engineering work, and software systems developed
+        for FIRST Tech Challenge.
       </p>
 
-      {/* Grid */}
       <div className="grid md:grid-cols-2 gap-6">
-
-        {/* CAD */}
-        <div className="border border-[#30363d] rounded-xl p-6">
-          <h2 className="text-xl font-semibold text-white mb-2">
-            CAD & Design
+        <div className="paper-panel p-6 print-shadow-red transition hover:-translate-y-1">
+          <h2 className="font-display text-lg text-punch-red mb-2">
+            2026 CC portfolio
           </h2>
-          <ul className="text-red-400 space-y-2 text-sm">
-            <li>• Onshape (3D Modeling)</li>
-            <li><a href="https://www.youtube.com/channel/UCTvd5lUSLtTH8Qcd7Pl1nQg" className="text-blue-400 hover:text-red-300">Official Onshape YouTube Channel</a></li>
-          </ul>
+          <p className="text-charcoal/80 text-sm font-medium">
+            Our FTC Discord CAD Competition 2026 portfolio
+          </p>
         </div>
 
-        {/* Software */}
-        <div className="border border-[#30363d] rounded-xl p-6">
-          <h2 className="text-xl font-semibold text-white mb-2">
-            Software
+        <div className="paper-panel p-6 print-shadow-blue transition hover:-translate-y-1">
+          <h2 className="font-display text-lg text-steel-blue mb-2">
+            Github
           </h2>
-          <ul className="text-blue-400 space-y-2 text-sm">
-            <li>• Java and Kotlin</li>
-            <li><a href="https://github.com/alan412/LearnJavaForFTC/blob/master/LearnJavaForFTC.pdf" className="text-blue-400 hover:text-red-300">Learn Java for FTC (PDF)</a></li>
-            <li><a href="https://www.codecademy.com/learn/learn-kotlin" className="text-blue-400 hover:text-red-300">Learn Kotlin (codecademy)</a></li>
-            <li>• Our custom pathing software (coming soon!)</li>
-            <li>• Team Github</li>
-            <li><a href="https://github.com/orgs/Double-Trouble-FTC-35725" className="text-blue-400 hover:text-red-300">Team Github</a></li>
-          </ul>
+          <p className="text-charcoal/80 text-sm font-medium">
+            <a
+              href="https://github.com/Double-Trouble-FTC-35725"
+              className="text-steel-blue hover:text-punch-red underline"
+            >
+              Access our Github here!
+            </a>
+          </p>
         </div>
-
-        {/* Strategy */}
-        <div className="border border-[#30363d] rounded-xl p-6">
-          <h2 className="text-xl font-semibold text-white mb-2">
-            Competition Strategy
-          </h2>
-          <ul className="text-red-400 space-y-2 text-sm">
-            <li>• Game manual analysis</li>
-            <li>• Autonomous scoring planning</li>
-            <li>• Driver practice routines</li>
-            
-          </ul>
-        </div>
-
-        {/* Learning links*/}
-        <div className="border border-[#30363d] rounded-xl p-6">
-          <h2 className="text-xl font-semibold text-white mb-2">
-            Learning Resources
-          </h2>
-          <ul className="text-blue-400 space-y-2 text-sm">
-            <li>• Java for FTC</li>
-            <li><a href="https://github.com/alan412/LearnJavaForFTC/blob/master/LearnJavaForFTC.pdf" className="text-blue-400 hover:text-red-300">Learn Java for FTC (PDF)</a></li>
-            <li>• FTC Discord</li>
-            <li><a href="https://discord.com/invite/ftc" className="text-blue-400 hover:text-red-300">FTC Discord Server</a></li>
-            <li>• Best Youtube Resources</li>
-            <li><a href="https://www.youtube.com/channel/UCTvd5lUSLtTH8Qcd7Pl1nQg" className="text-blue-400 hover:text-red-300">Official Onshape YouTube Channel</a></li>
-          </ul>
-        </div>
-
       </div>
     </div>
   );
