@@ -13,7 +13,7 @@ export default function Contact() {
       <p className="text-charcoal/80 mb-6 font-medium">
         Interested in joining? Fill out our form{" "}
         <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfdl_4pVvgRCfVlBzCo469z4SrniqjKgVdDEMVoCtGJ3m8uug/viewform?usp=sf_link"
+          href="https://docs.google.com/forms/d/1zdhwRKNvNX1O600cyJk3JRoK40nsN6CjnS75oSoAFuY/edit"
           target="_blank"
           rel="noopener noreferrer"
           className="text-steel-blue hover:text-punch-red underline"
