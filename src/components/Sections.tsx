@@ -42,7 +42,7 @@ const sponsors = [
 export function SponsorGrid() {
   return (
     <div>
-
+      
       {/* Sponsor Grid */}
       {sponsors.length > 0 && (
         <div className="grid md:grid-cols-3 gap-6 mb-16">

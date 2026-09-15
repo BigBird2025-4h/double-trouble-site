@@ -6,8 +6,7 @@ export default function PortfolioPage() {
       </h1>
 
       <p className="text-charcoal/80 mb-10 max-w-2xl font-medium">
-        Our robotics builds, engineering work, and software systems developed
-        for FIRST Tech Challenge.
+        Some of our previous work and projects we've worked on.
       </p>
 
       <div className="grid md:grid-cols-2 gap-6">

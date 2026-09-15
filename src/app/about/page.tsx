@@ -7,9 +7,8 @@ export default function AboutPage() {
       </h1>
 
       <p className="text-charcoal/80 max-w-2xl mb-10 font-medium">
-        Double Trouble (#35725) is an FTC (FIRST Tech Challenge) team from
-        Chattanooga, TN, dedicated to designing, building, and programming
-        high-performance robots while bringing STEAM to our community.
+        Double Trouble is a FIRST Tech Challenge team from
+        Chattanooga, TN dedicated to uncomprimising excellence.
       </p>
 
       <div className="grid md:grid-cols-2 gap-6">
@@ -18,9 +17,7 @@ export default function AboutPage() {
             Our Mission
           </h2>
           <p className="text-charcoal/80 text-sm font-medium">
-            We build competitive robots while practicing Gracious
-            Professionalism on and off the field, and connecting big ideas
-            with practical, hands-on solutions.
+            We want to show kids that robotics isn't so complicated. FIRST gives students the opportunity to learn all about engineering, programming, and how to work as a team. 
           </p>
         </div>
 
@@ -29,10 +26,11 @@ export default function AboutPage() {
             What We Do
           </h2>
           <ul className="text-charcoal/80 space-y-2 text-sm font-medium list-disc list-inside">
-            <li>Design, CAD, and build competition robots</li>
-            <li>Write and test autonomous and driver-controlled code</li>
+            <li>use CAD to design robots</li>
+            <li>use advanced manufacturing techniques to create our machines</li>
+            <li>Write and test code</li>
             <li>Compete in FIRST Tech Challenge events</li>
-            <li>Mentor newer teams and support STEAM outreach</li>
+            <li>Mentor other teams and support STEAM outreach</li>
           </ul>
         </div>
       </div>

@@ -6,8 +6,8 @@ export default function OutreachPage() {
       </h1>
 
       <p className="text-charcoal/80 max-w-2xl mb-10 font-medium">
-        Bringing STEAM to our community is at the core of what we do. Here&apos;s
-        how we spread the word beyond the competition field.
+        Bringing STEAM to our community is at the core of what we do. Here are some of the ways
+        we engage with our community.
       </p>
 
       <div className="grid md:grid-cols-2 gap-6">
@@ -17,7 +17,7 @@ export default function OutreachPage() {
           </h2>
           <p className="text-charcoal/80 text-sm font-medium">
             We bring our robots to local events, schools, and libraries to
-            show younger students what STEAM and robotics can look like.
+            recruit and show local students what FIRST robotics is.
           </p>
         </div>
 
@@ -26,15 +26,14 @@ export default function OutreachPage() {
             Mentoring
           </h2>
           <p className="text-charcoal/80 text-sm font-medium">
-            We help newer FTC and FLL teams get started with CAD, code, and
-            competition strategy.
+            We mentor FRC #9073 skol robotics and lead the Aerospace and Rocketry club at Chattanooga State Community College. We have currently led 19 Onshape and programming workshops for college students.
           </p>
         </div>
       </div>
 
       <div className="mt-12 text-center">
         <p className="text-charcoal/70 mb-4 font-medium">
-          Want us at your event, or interested in partnering with us?
+          if you would like us at your event or are interested in partnering with us please contact us.
         </p>
         <a
           href="/contact"

@@ -56,8 +56,10 @@ export default function SponsorsPage() {
 
         <div className="grid gap-6 md:grid-cols-2">
           {/* Tier 1 */}
-          <div className="paper-panel p-6">
-            <h3 className="font-display text-lg text-charcoal mb-2">
+            <div 
+               className="paper-panel p-6 print-shadow-red"
+               style={{ borderColor: "var(--color-punch-red)" }}
+            >            <h3 className="font-display text-lg text-charcoal mb-2">
               Rookie level
             </h3>
             <p className="text-steel-blue font-bold mb-4">$100+</p>
@@ -68,7 +70,10 @@ export default function SponsorsPage() {
           </div>
 
           {/* Tier 2 */}
-          <div className="paper-panel p-6">
+            <div 
+               className="paper-panel p-6 print-shadow-red"
+               style={{ borderColor: "var(--color-punch-red)" }}
+            >            
             <h3 className="font-display text-lg text-charcoal mb-2">
               Heavyweight level
             </h3>
@@ -81,7 +86,10 @@ export default function SponsorsPage() {
           </div>
 
           {/* Tier 3 */}
-          <div className="paper-panel p-6">
+          <div 
+               className="paper-panel p-6 print-shadow-blue"
+               style={{ borderColor: "var(--color-steel-blue)" }}
+            >
             <h3 className="font-display text-lg text-charcoal mb-2">
               Knockout level
             </h3>
