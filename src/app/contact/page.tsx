@@ -7,11 +7,7 @@ export default function Contact() {
 
       <p className="text-charcoal/80 mb-6 font-medium">
         Reach out for sponsorships, collaboration, or questions. We&apos;d
-<<<<<<< HEAD
-        love to hear from you! If the links dont work call 423-749-3136 or email us at doubletrouble35725@gmail.com.
-=======
-        love to hear from you! Call 423-749-3136 or email us at doubletrouble35725@gmail.com (if the link doesn't work).
->>>>>>> 159f3d33586e48ea32abfb80ff19b066d00b8a57
+      love to hear from you! If the links dont work call 423-749-3136 or email us at doubletrouble35725@gmail.com.
       </p>
 
       <p className="text-charcoal/80 mb-6 font-medium">
