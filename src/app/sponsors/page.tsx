@@ -98,7 +98,7 @@ export default function SponsorsPage() {
 
           {/* Tier 4 */}
           <div
-            className="paper-panel p-6 print-shadow-red"
+            className="paper-panel p-6 print-shadow-blue"
             style={{ borderColor: "var(--color-steel-blue)" }}
           >
             <h3 className="font-display text-lg text-charcoal mb-2">
