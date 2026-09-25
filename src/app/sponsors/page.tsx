@@ -71,7 +71,7 @@ export default function SponsorsPage() {
           {/* Tier 2 */}
             <div 
                className="paper-panel p-6 print-shadow-red"
-               style={{ borderColor: "var(--color-punch-red)" }}
+               style={{ borderColor: "var(--color-steel-blue)" }}
             >            
             <h3 className="font-display text-lg text-charcoal mb-2">
               Heavyweight level
