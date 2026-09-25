@@ -70,7 +70,7 @@ export default function SponsorsPage() {
 
           {/* Tier 2 */}
             <div 
-               className="paper-panel p-6 print-shadow-red"
+               className="paper-panel p-6 print-shadow-blue"
                style={{ borderColor: "var(--color-steel-blue)" }}
             >            
             <h3 className="font-display text-lg text-charcoal mb-2">
@@ -84,8 +84,8 @@ export default function SponsorsPage() {
 
           {/* Tier 3 */}
           <div 
-               className="paper-panel p-6 print-shadow-blue"
-               style={{ borderColor: "var(--color-steel-blue)" }}
+               className="paper-panel p-6 print-shadow-red"
+               style={{ borderColor: "var(--color-punch-red)" }}
             >
             <h3 className="font-display text-lg text-charcoal mb-2">
               Knockout level
@@ -98,8 +98,8 @@ export default function SponsorsPage() {
 
           {/* Tier 4 */}
           <div
-            className="paper-panel p-6 print-shadow-gold bg-mustard-gold/10"
-            style={{ borderColor: "var(--color-mustard-gold)" }}
+            className="paper-panel p-6 print-shadow-red"
+            style={{ borderColor: "var(--color-steel-blue)" }}
           >
             <h3 className="font-display text-lg text-charcoal mb-2">
               Champion level
