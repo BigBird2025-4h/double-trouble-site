@@ -60,12 +60,11 @@ export default function SponsorsPage() {
                className="paper-panel p-6 print-shadow-red"
                style={{ borderColor: "var(--color-punch-red)" }}
             >            <h3 className="font-display text-lg text-charcoal mb-2">
-              Rookie level
+              Featherweight level
             </h3>
             <p className="text-steel-blue font-bold mb-4">$100+</p>
             <ul className="space-y-2 text-charcoal/80 list-disc list-inside font-medium text-sm">
-              <li>Name listed on our website.</li>
-              <li>Thank-you on our social media.</li>
+              <li>Name and logo displayed on our website and team shirts.</li>
             </ul>
           </div>
 
@@ -79,9 +78,7 @@ export default function SponsorsPage() {
             </h3>
             <p className="text-steel-blue font-bold mb-4">$500+</p>
             <ul className="space-y-2 text-charcoal/80 list-disc list-inside font-medium text-sm">
-              <li>Everything in Rookie Level.</li>
-              <li>Small logo displayed on our website.</li>
-              <li>Recognition on team promotional materials.</li>
+              <li>Name and logo displayed on our website, shirts and team banner.</li>
             </ul>
           </div>
 
@@ -95,9 +92,7 @@ export default function SponsorsPage() {
             </h3>
             <p className="text-steel-blue font-bold mb-4">$1,000+</p>
             <ul className="space-y-2 text-charcoal/80 list-disc list-inside font-medium text-sm">
-              <li>Everything in Heavyweight level.</li>
-              <li>Large logo on our website.</li>
-              <li>Logo featured on our team banner.</li>
+              <li>Name and logo displayed on our website, shirts, team banner, and robot.</li>
             </ul>
           </div>
 
@@ -111,10 +106,7 @@ export default function SponsorsPage() {
             </h3>
             <p className="text-gold-dark font-bold mb-4">$2,500+</p>
             <ul className="space-y-2 text-charcoal/80 list-disc list-inside font-medium text-sm">
-              <li>Everything in Knockout level.</li>
-              <li>Premier logo placement on our website.</li>
-              <li>Featured on the robot.</li>
-              <li>Special recognition as a major team sponsor.</li>
+              <li>Name and logo displayed on our website, shirts, team banner, and robot, as well as outreach event at your business/venue of choice.</li>
             </ul>
           </div>
         </div>
