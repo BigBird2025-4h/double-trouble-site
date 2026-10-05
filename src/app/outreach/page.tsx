@@ -52,10 +52,6 @@ export default function OutreachPage() {
           <p className="text-charcoal/80 text-sm font-medium">
             We are currently in the process of creating a community-based FRC team for the Chattanooga area. If you'd be interested in that, please reach out to us. This is tentative so the more interest we have in that initiative the more likely it is that we'll be able to create it.
  
-            <a href="https://www.frc9073.org/" className="text-punch-red hover:underline">
-              Skol Robotics
-            </a>
-            located in Memphis, TN on Software and CAD. Skol competed in the Arkansas regional last year, and became a Finalist Alliance Captain as well as the winner of the Gracious Professionalism Award.
           </p>
         </div>
 
