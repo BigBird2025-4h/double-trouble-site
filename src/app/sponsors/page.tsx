@@ -9,7 +9,7 @@ const sponsors = [
 
   {
     name: "Github",
-    logo: "/sponsors/GITHUB-LOGO.webp",
+    logo: "/sponsors/GITHUB-LOGO.png",
     url: "https://www.github.com/",
   },
 
