@@ -7,6 +7,18 @@ const sponsors = [
     url: "https://www.sceniccityortho.com/",
   },
 
+  {
+    name: "Github",
+    logo: "/sponsors/GITHUB-LOGO.webp",
+    url: "https://www.github.com/",
+  },
+
+  {
+    name: "Canva",
+    logo: "/sponsors/CANVA-LOGO.webp",
+    url: "https://www.canva.com/",
+  },
+
 ];
 
 export default function SponsorsPage() {

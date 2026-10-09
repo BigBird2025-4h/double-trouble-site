@@ -14,7 +14,7 @@ export default function OutreachPage() {
         <div className="paper-panel p-6">
           <h2 className="font-display text-lg text-punch-red mb-2">
             <a href="https://4-h.org/" className="text-punch-red hover:underline">
-              4-H
+              Tennessee 4-H STEM Outreach
             </a>
           </h2>
           <p className="text-charcoal/80 text-sm font-medium">
@@ -33,22 +33,36 @@ export default function OutreachPage() {
 
         <div className="paper-panel p-6">
           <h2 className="font-display text-lg text-steel-blue mb-2">
-            FRC Mentorship
+            FRC #9073 Mentorship
           </h2>
           <p className="text-charcoal/80 text-sm font-medium">
             We mentor FRC #9073 
             <a href="https://www.frc9073.org/" className="text-punch-red hover:underline">
               Skol Robotics
             </a>
-            located in Memphis, TN on Software and CAD. We are also currently in the process of creating a community-based FRC team for Chattanooga. If you'd be interested in that, please reach out to us. The more interest we have in that initiative the more likely it is that we'll be able to create it.
+            located in Memphis, TN on Software and CAD. Skol competed in the Arkansas regional last year, and became a Finalist Alliance Captain as well as the winner of the Gracious Professionalism Award.
           </p>
         </div>
       </div>
 
       <div className="paper-panel p-6">
           <h2 className="font-display text-lg text-steel-blue mb-2">
+            Only community FRC team in Chattanooga
+          </h2>
+          <p className="text-charcoal/80 text-sm font-medium">
+            We are currently in the process of creating a community-based FRC team for the Chattanooga area. If you'd be interested in that, please reach out to us. This is tentative so the more interest we have in that initiative the more likely it is that we'll be able to create it.
+ 
+            <a href="https://www.frc9073.org/" className="text-punch-red hover:underline">
+              Skol Robotics
+            </a>
+            located in Memphis, TN on Software and CAD. Skol competed in the Arkansas regional last year, and became a Finalist Alliance Captain as well as the winner of the Gracious Professionalism Award.
+          </p>
+        </div>
+
+      <div className="paper-panel p-6">
+          <h2 className="font-display text-lg text-steel-blue mb-2">
             <a href="https://www.chattanoogastate.edu/" className="text-steel-blue hover:underline">
-              Chattanooga State Community College
+              Chattanooga State Community College Aerospace and Rocketry Club
             </a>
           </h2>
           <p className="text-charcoal/80 text-sm font-medium">
