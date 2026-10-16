@@ -51,11 +51,6 @@ export default function OutreachPage() {
           </h2>
           <p className="text-charcoal/80 text-sm font-medium">
             We are currently in the process of creating a community-based FRC team for the Chattanooga area. If you'd be interested in that, please reach out to us. This is tentative so the more interest we have in that initiative the more likely it is that we'll be able to create it.
- 
-            <a href="https://www.frc9073.org/" className="text-punch-red hover:underline">
-              Skol Robotics
-            </a>
-            located in Memphis, TN on Software and CAD. Skol competed in the Arkansas regional last year, and became a Finalist Alliance Captain as well as the winner of the Gracious Professionalism Award.
           </p>
         </div>
 
@@ -70,7 +65,7 @@ export default function OutreachPage() {
             <a href="https://csccarc.vercel.app/" className="text-punch-red hover:underline">
               Chattanooga State Community College
             </a>
-            to provide students with hands-on experience in engineering, something that was unavailable to the college. We have led over 19 workshops on software, CAD, electronics, and engineering and are currently building a thrust vectoring rocket. We submitted a proposal to compete in the NASA University Student Launch Initiative, however we were not selected this year.
+            to provide students with hands-on experience in rocketry and engineering. We have led over 19 workshops on software, CAD, electronics, and engineering and are currently building a thrust vectoring rocket! We also recently submitted a proposal to compete in the NASA University Student Launch Initiative. Sadly, we were not selected this year, but we are currently working on acquiring funding to help all of our members obtain their level 1 high power certifications.
           </p>
         </div>
 
